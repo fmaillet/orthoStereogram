@@ -127,7 +127,7 @@ namespace orthoStereogram
         //Count statement
         public User CheckAdeli(string adeli, string pwd)
         {
-            string query = "select NOM, PRENOM, PWD, LIMITE from Pro where ADELI = 319203121";
+            string query = "select NOM, PRENOM, PWD, LIMITE from Pro where ADELI = " + adeli;
             User user = new User();
             user.name = "demo";
 

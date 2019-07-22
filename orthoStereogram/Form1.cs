@@ -23,7 +23,7 @@ namespace orthoStereogram
 {
     public partial class mainForm : Form
     {
-        public User user = new User();
+        public static User user = new User();
 
         public mainForm()
         {
@@ -95,9 +95,16 @@ namespace orthoStereogram
         //Connect to serveur to check auths
         private void connexionServeurToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Afficher ConnexionForm
+            ConnexionForm datas = new ConnexionForm();
+            datas.ShowDialog(this);
+
+            Console.WriteLine(user.adeli);
+            Console.WriteLine(user.pwd);
+
             DBConnect fmaillet = new DBConnect();
 
-            user = fmaillet.CheckAdeli("319203121", "12345");
+            user = fmaillet.CheckAdeli(user.adeli, user.pwd);
             Console.WriteLine(user.name);
             Console.WriteLine(user.prenom);
             Console.WriteLine(user.adeli);
@@ -216,6 +223,12 @@ namespace orthoStereogram
         {
             AboutForm about = new AboutForm();
             about.ShowDialog(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AnaglyphForm anaglyph = new AnaglyphForm();
+            anaglyph.Show();
         }
     }
 

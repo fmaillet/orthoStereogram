@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comments = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -41,7 +42,6 @@
             this.label1.Size = new System.Drawing.Size(192, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "(c) Frédéric Maillet ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -53,17 +53,27 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Orthoptiste - Neuropsychologue";
             // 
+            // comments
+            // 
+            this.comments.Location = new System.Drawing.Point(25, 29);
+            this.comments.Name = "comments";
+            this.comments.Size = new System.Drawing.Size(303, 130);
+            this.comments.TabIndex = 2;
+            this.comments.Text = "label3";
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 258);
+            this.Controls.Add(this.comments);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.Text = "orthoStéréogram";
+            this.Shown += new System.EventHandler(this.AboutForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,5 +83,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label comments;
     }
 }
